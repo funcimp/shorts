@@ -1,0 +1,10 @@
+# stage 1
+FROM golang:1.19
+
+WORKDIR /app
+COPY go.mod ./
+RUN go mod download
+COPY main.go ./
+RUN go build -o /learn -tags netgo
+EXPOSE 1337
+ENTRYPOINT ["/learn"]
