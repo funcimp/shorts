@@ -9,9 +9,9 @@ build-multi:
 
 compare:
 	@clear
-	docker images funcimp/shorts/smcntr
+	docker images funcimp/shorts/smcntr:singlestage
 
 build: build-single build-multi
 
 run:
-	@docker run -d -p 1337:1337 -it funcimp/shorts/smcntr:multistage /bin/bash
+	@docker run -d -p 1337:1337 -it funcimp/shorts/smcntr:multistage
